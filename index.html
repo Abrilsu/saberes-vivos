@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saberes Vivos - Formación Multidisciplinaria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <style>
+        /* ESTILOS GENERALES */
+        body {
+            font-family: 'Playfair Display', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #27ae60);
+            color: white;
+            padding: 50px;
+            font-size: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 3.5rem;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        h1 span {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 4rem;
+            color: #f1c40f;
+        }
+
+        .tagline {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: #ecf0f1;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .logo {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #27ae60;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* ESTILOS DE CURSOS */
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .course {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: transform 0.3s;
+        }
+
+        .course:hover {
+            transform: scale(1.05);
+        }
+
+        .course h3 {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .course p {
+            color: #7f8c8d;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .course button {
+            padding: 10px 15px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .course button:hover {
+            background-color: #2ecc71;
+        }
+
+        /* FORMULARIO DE ACCESO REFINADO */
+        .subscription {
+            margin: 15px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .subscription input {
+            padding: 8px;
+            width: 80%;
+            max-width: 250px;
+            border: 1px solid #27ae60;
+            border-radius: 5px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* BOTÓN CÓDIGO DE ACCESO */
+        .subscription .access-btn {
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #f1c40f, #e67e22);
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .subscription .access-btn:hover {
+            background: linear-gradient(45deg, #e67e22, #f1c40f);
+            transform: scale(1.05);
+        }
+
+        /* BOTÓN PORTAL DEL SABER */
+        .portal-btn {
+            padding: 12px 25px;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: transform 0.3s ease, background 0.3s ease;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .portal-btn:hover {
+            background: linear-gradient(45deg, #2575fc, #6a11cb);
+            transform: scale(1.08);
+        }
+
+        /* PIE DE PÁGINA */
+        footer {
+            background: #dcdcdc;
+            color: #555;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .footer-icon {
+            width: 70px;
+            height: auto;
+            margin-top: -5px;
+        }
+
+        /* RESPONSIVIDAD */
+        @media (max-width: 600px) {
+            .subscription input {
+                width: 100%;
+            }
+
+            .subscription .access-btn,
+            .portal-btn {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Hotmart_logo.svg" alt="Hotmart Logo" class="logo">
+        <h1><strong>Saberes</strong><span> Vivos</span></h1>
+        <p class="tagline">Aprendizaje que transforma</p>
+    </header>
+
+    <div class="container">
+        <h2>Accede a la Fuente</h2>
+        <div class="subscription">
+            <input type="text" id="accessCode" placeholder="Introduce el código de acceso">
+            <button class="access-btn" onclick="checkAccess()">Código de Acceso</button>
+            <button class="portal-btn" onclick="openPortal()">🎨 Portal de las Artes</button>
+    </div>
+    <div class="container">
+        <h2>📖 Catálogo de Saberes</h2>
+        <div class="courses">
+            <div class="course">
+                <h3>🎨 Arte y Creatividad</h3>
+                <p>Explora el mundo del diseño gráfico, la pintura y la creación artística manual y digital con herramientas modernas.</p>
+                <button onclick="alert('Explora el mundo del diseño gráfico, la pintura y la creación artística tanto manual como digital, utilizando herramientas modernas para fomentar tu expresión visual y desarrollo creativo.')">Ver Saber</button>
+            </div>
+            <div class="course">
+                <h3>🎶 Música y Sonido</h3>
+                <p>Aprende a diseñar paisajes sonoros y el uso de software profesional para crear música y escenarios acústicos únicos.</p>
+                <button onclick="alert('Aprende a diseñar paisajes sonoros, a dominar el uso de software profesional para componer música y a crear escenarios acústicos únicos que transmitan emociones a través del sonido.')">Ver Saber</button>
+            </div>
+            <div class="course">
+                <h3>💻 Tecnologías Emergentes</h3>
+                <p>Sumérgete en el mundo de la IA, BlockChain, desarrollo de software y productividad creativa.</p>
+                <button onclick="alert('Sumérgete en las tecnologías de vanguardia como la Inteligencia Artificial, Blockchain, desarrollo de software y productividad creativa, para comprender su impacto y aplicabilidad en el mundo actual.')">Ver Saber</button>
+            </div>
+            <div class="course">
+                <h3>🧘‍♂️ Espiritualidad y Metafísica</h3>
+                <p>Descubre prácticas de meditación, mindfulness y desarrollo personal que transforman tu vida espiritual.</p>
+                <button onclick="alert('Descubre las prácticas de meditación, mindfulness y técnicas de desarrollo personal que te permitirán alcanzar el equilibrio espiritual, emocional y mental, transformando tu vida hacia un estado de paz interior.')">Ver Saber</button>
+            </div>
+            <div class="course">
+                <h3>🌍 Ecología y Naturaleza</h3>
+                <p>Conoce cómo proteger el medio ambiente, el diseño sostenible y las prácticas ecológicas que ayudan al planeta.</p>
+                <button onclick="alert('Conoce el impacto de nuestras acciones en el medio ambiente y aprende sobre el diseño sostenible, la conservación de la naturaleza y las prácticas ecológicas que promueven la salud del planeta.')">Ver Saber</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+         <p><img src="https://seeklogo.com/images/B/black-sheep-logo-39BDC88000-seeklogo.com.png" alt="Ícono personalizado" class="footer-icon"></p>
+        © 2025 Saberes Vivos | Creado con Amor por <strong>BlackSheep</strong></p>
+        <img class="footer-icon" src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Hotmart_logo.svg" alt="Hotmart Logo"class="footer-icon">
+    </footer>
+    <script>
+        function checkAccess() {
+            var code = document.getElementById('accessCode').value;
+            if (code.toLowerCase() === 'hotmark') {
+                alert("✅ Acceso concedido. ¡Bienvenidx a Saberes Vivos!");
+            } else {
+                alert("🚫 Código incorrecto. Inténtalo de nuevo.");
+            }
+        }
+
+        function openPortal() {
+            alert("🪐 Bienvenidx al Portal de las Artes. 🎨 ¡Explora el espacio sin límites! ✨🚀 × Abril Martínez 🌸✨");
+            window.location.href = "https://www.instagram.com/estrella_del_viajero?";
+        }
+    </script>
+
+</body>
+</html>
+
